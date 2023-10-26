@@ -1,16 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './index.css'
+import { Container, Nav, Navbar } from 'react-bootstrap'
+import { Outlet } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div>
-      <header>TS Amazona</header>
-      <main></main>
-      <footer>All right reserved</footer>
+    <div className='d-flex flex-column vh-100'>
+      <header>
+        <Navbar bg="dark" variant = 'dark' expand = "lg">
+          <Container>
+            <Navbar.Brand>Amazona</Navbar.Brand>
+          </Container>
+          <Nav>
+            <a href = "/cart" className = "nav-link" >Cart</a>
+            <a href = "/signin" className = "nav-link" >Sign In</a>
+          </Nav>
+        </Navbar>
+    
+      </header>
+
+      <main>
+        <Container>
+          <Outlet ></Outlet>
+        </Container>
+      </main>
     </div>
   )
 }
